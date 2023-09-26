@@ -52,7 +52,7 @@ namespace app_productAPI.Controllers
 
         [AllowAnonymous]
         [HttpPost("{email}/{password}")]
-        public JsonResult GetUser(string email,string password)
+        public IActionResult GetUser(string email,string password)
         {
             var user= UserManager.GetUserByEmailAndPassword(email,password);
             IActionResult response = Unauthorized();
@@ -61,7 +61,7 @@ namespace app_productAPI.Controllers
                 var token= GenerateToken(user);
                 response = Ok(new { token=token });
             }
-            return new JsonResult(response);
+            return  response;
         }
     }
 }

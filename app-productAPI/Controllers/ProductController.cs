@@ -27,7 +27,7 @@ namespace app_productAPI.Controllers
             ProductManager = manager;
         }
 
-        //[Authorize]
+        [Authorize]
         [HttpGet]
   
        public JsonResult GetProducts()
@@ -36,7 +36,7 @@ namespace app_productAPI.Controllers
             return new JsonResult(list);
         }
 
-        //[Authorize]
+        [Authorize]
         [HttpPost]
   
         public JsonResult AddProducts(Product newProduct)
@@ -47,7 +47,7 @@ namespace app_productAPI.Controllers
             return new JsonResult(isSave); ;
         }
 
-       // [Authorize]
+        [Authorize]
         [HttpDelete("id")]
         public JsonResult DeleteProducts(int id)
         {

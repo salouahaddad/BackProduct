@@ -58,6 +58,7 @@ namespace app_productAPI
                 app.UseSwaggerUI();
             }
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
 
